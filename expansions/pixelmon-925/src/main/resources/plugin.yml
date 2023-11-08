@@ -1,0 +1,7 @@
+name: BingoPixelmonExpansion
+main: com.aiyostudio.bingoexpansions.pixelmon.v1_20_2.PixelmonModelServiceImpl
+depend:
+  - AyCore
+  - Bingo
+version: @version@
+api-version: 1.20
