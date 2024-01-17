@@ -1,0 +1,34 @@
+import org.apache.tools.ant.filters.ReplaceTokens
+
+repositories {
+    jcenter()
+    maven {
+        name = "AyStudio-Repository"
+        url = "https://repo.mc9y.com/snapshots"
+    }
+}
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+version = '1.0.0-SNAPSHOT'
+group = 'com.aiyostudio.bingoexpansions.custom'
+archivesBaseName = 'BingoCustomExpansions'
+
+dependencies {
+    implementation("org.spigotmc:spigot:1.20.1-R0.1-SNAPSHOT")
+    implementation("org.spigotmc:spigot-api:1.20.1-R0.1-SNAPSHOT")
+    implementation("com.aystudio.core:AyCore:1.0.6-BETA")
+
+    implementation fileTree(dir: './libs', includes: ['*.jar'])
+}
+
+processResources {
+    setFilteringCharset("UTF-8")
+    from(sourceSets.main.resources.srcDirs) {
+        include '**/plugin.yml'
+        filter ReplaceTokens, tokens: ["version": project.property("version")]
+        duplicatesStrategy DuplicatesStrategy.INCLUDE
+    }
+}

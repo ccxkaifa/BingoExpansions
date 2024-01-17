@@ -9,3 +9,4 @@ rootProject.name = "BingoExpansion"
 
 include 'expansions:pixelmon-920'
 include 'expansions:pixelmon-925'
+include 'expansions:module-custom-hook'

@@ -1,0 +1,10 @@
+name: CustomHookExpansion
+main: com.aiyostudio.bingoexpansions.custom.CustomHookExpansion
+depend:
+  - AyCore
+  - Bingo
+softdepend:
+  - CustomCrops
+  - CustomFishing
+version: @version@
+api-version: 1.20~
